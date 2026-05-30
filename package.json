@@ -1,0 +1,16 @@
+{
+  "name": "voice-calendar-tool",
+  "version": "0.1.0",
+  "description": "语音版日历小工具，支持用语音添加、查看、删除日程。",
+  "type": "module",
+  "scripts": {
+    "start": "python -m http.server 5173"
+  },
+  "keywords": [
+    "calendar",
+    "speech",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT"
+}

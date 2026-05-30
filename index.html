@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>语音日历工具</title>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">日历助手</p>
+        <h1>语音版日历工具</h1>
+        <p class="hero-text">可以说话添加、查看、删除日程，也可以在页面里手动录入。</p>
+      </div>
+      <button id="voiceButton" class="voice-button" aria-label="开始语音输入">
+        <span id="voiceIcon">🎙️</span>
+        <span id="voiceButtonText">按下说话</span>
+      </button>
+    </header>
+
+    <main class="layout">
+      <section class="panel command-panel">
+        <h2>指令输入</h2>
+        <p class="muted">可以试着这样说：</p>
+        <div class="examples">
+          <button class="example-command">明天下午三点提醒我开会</button>
+          <button class="example-command">添加今天晚上八点健身，提前十分钟提醒</button>
+          <button class="example-command">查看明天的日程</button>
+          <button class="example-command">删除开会</button>
+        </div>
+
+        <label for="commandInput">识别结果 / 手动输入</label>
+        <textarea id="commandInput" rows="4" placeholder="也可以在这里输入文字命令，再点击执行"></textarea>
+        <div class="button-row">
+          <button id="runCommandButton" class="primary-button">执行指令</button>
+          <button id="helpButton" class="secondary-button">查看帮助</button>
+        </div>
+        <div id="statusBox" class="status-box" role="status">可以先试试上面的示例指令。</div>
+      </section>
+
+      <section class="panel form-panel">
+        <h2>手动添加事件</h2>
+        <form id="eventForm" class="event-form">
+          <label>
+            事件标题
+            <input id="titleInput" type="text" placeholder="例如：项目评审" required />
+          </label>
+          <div class="form-grid">
+            <label>
+              日期
+              <input id="dateInput" type="date" required />
+            </label>
+            <label>
+              时间
+              <input id="timeInput" type="time" required />
+            </label>
+          </div>
+          <label>
+            提前提醒
+            <select id="reminderInput">
+              <option value="0">准时提醒</option>
+              <option value="5">提前 5 分钟</option>
+              <option value="10" selected>提前 10 分钟</option>
+              <option value="30">提前 30 分钟</option>
+              <option value="60">提前 1 小时</option>
+            </select>
+          </label>
+          <button class="primary-button" type="submit">添加事件</button>
+        </form>
+      </section>
+
+      <section class="panel events-panel">
+        <div class="section-title-row">
+          <div>
+            <h2>日程列表</h2>
+            <p id="eventSummary" class="muted">暂无事件</p>
+          </div>
+          <div class="button-row compact">
+            <button id="todayButton" class="secondary-button">今天</button>
+            <button id="allButton" class="secondary-button">全部</button>
+          </div>
+        </div>
+        <div id="eventList" class="event-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
