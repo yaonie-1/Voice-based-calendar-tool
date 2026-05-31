@@ -1,0 +1,27 @@
+[
+  {
+    "command": "明天下午三点提醒我开会",
+    "expectedIntent": "add",
+    "expectedTitle": "开会"
+  },
+  {
+    "command": "添加今天晚上八点健身，提前十分钟提醒",
+    "expectedIntent": "add",
+    "expectedTitle": "健身"
+  },
+  {
+    "command": "查看今天的日程",
+    "expectedIntent": "view",
+    "expectedRange": "date"
+  },
+  {
+    "command": "查看本周日程",
+    "expectedIntent": "view",
+    "expectedRange": "week"
+  },
+  {
+    "command": "删除开会",
+    "expectedIntent": "delete",
+    "expectedKeyword": "开会"
+  }
+]
